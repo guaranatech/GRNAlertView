@@ -3,7 +3,7 @@
 //  Raden
 //
 //  Created by Antoine Marliac on 16-01-28.
-//  Copyright © 2016 Antoine Marliac. All rights reserved.
+//  Copyright © 2016 Guaraná Technologies Inc All rights reserved.
 //
 
 #import "AlertController.h"

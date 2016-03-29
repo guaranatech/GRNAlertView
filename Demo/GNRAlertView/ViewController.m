@@ -3,7 +3,7 @@
 //  GNRAlertView
 //
 //  Created by Antoine Marliac on 16-03-25.
-//  Copyright © 2016 Guaranà. All rights reserved.
+//  Copyright © 2016 Guaraná Technologies Inc. All rights reserved.
 //
 
 #import "ViewController.h"

@@ -3,7 +3,7 @@
 //  Raden
 //
 //  Created by Antoine Marliac on 16-01-28.
-//  Copyright © 2016 Guaranà Technologies. All rights reserved.
+//  Copyright © 2016 Guaraná Technologies Inc Technologies. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
