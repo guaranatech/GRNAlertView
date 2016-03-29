@@ -2,6 +2,8 @@
 
 This library has been created by [www.guarana.io](http://www.guarana.io)
 
+This very easy to use AlertView allows you to interact in a nice way with your users while preserving the aesthetics of the screen.
+
 ## Installation 
 
 Drag the folder GRNAlertView to your project.
