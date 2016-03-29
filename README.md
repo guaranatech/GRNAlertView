@@ -1,15 +1,13 @@
 # GRNAlertView #
 
-
+This library has been created by [www.guarana.io](http://www.guarana.io)
 
 ## Installation 
- ##
 
 Drag the folder GRNAlertView to your project.
 
 
 ## How to use it
- ##
 
 Instantiate your AlertContoller
 
@@ -75,7 +73,6 @@ Show the alert like so
 
 
 ## TODO
- ##
 
 * Transitions
 * Animations
