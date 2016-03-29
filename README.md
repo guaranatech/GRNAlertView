@@ -72,3 +72,4 @@ alert.backgroundType = BackgroundTypeTransparentLight;
 * More Animations
 * Dynamic buttons (vertical/horizontal)
 * Rating options
+* Cocoapods
