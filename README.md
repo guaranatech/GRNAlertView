@@ -6,7 +6,18 @@ This very easy to use AlertView allows you to interact in a nice way with your u
 
 ## Installation 
 
-Drag the folder GRNAlertView to your project.
+* Cocoapods
+
+
+``` 
+pod 'GRNAlertView', '~> 1.0'
+```
+
+[CLick here](https://guides.cocoapods.org/using/getting-started.html) more information about cocoapods and how to install it 
+
+* Manual
+
+Drag the folder GRNAlertView into your project.
 
 
 ## How to use it
