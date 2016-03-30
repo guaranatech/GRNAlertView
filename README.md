@@ -62,7 +62,33 @@ alert.backgroundType = BackgroundTypeTransparentLight;
 ![Blurred](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot3.png)
 
 
+## Customization
 
+
+
+``` objectivec
+//label text colors
+titleColor
+subtitleColor
+contentColor
+
+//button tint colors
+leftButtonColor
+rightButtonColor
+
+//background of the alertview frame
+alertBackgroundColor
+//background of the buttons
+leftButtonBackgroundColor
+rightButtonBackgroundColor
+
+//alertview radius
+cornerRadius
+//alertview shadow opacity
+shadowOppacity
+//alertview shadow spread
+shadowSpread
+```
 
 
 
