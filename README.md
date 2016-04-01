@@ -6,7 +6,18 @@ This very easy to use AlertView allows you to interact in a nice way with your u
 
 ## Installation 
 
-Drag the folder GRNAlertView to your project.
+* Cocoapods
+
+
+``` 
+pod 'GRNAlertView', '~> 1.0'
+```
+
+[CLick here](https://guides.cocoapods.org/using/getting-started.html) more information about cocoapods and how to install it 
+
+* Manual
+
+Drag the folder GRNAlertView into your project.
 
 
 ## How to use it
@@ -62,7 +73,33 @@ alert.backgroundType = BackgroundTypeTransparentLight;
 ![Blurred](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot3.png)
 
 
+## Customization
 
+
+
+``` objectivec
+//label text colors
+titleColor
+subtitleColor
+contentColor
+
+//button tint colors
+leftButtonColor
+rightButtonColor
+
+//background of the alertview frame
+alertBackgroundColor
+//background of the buttons
+leftButtonBackgroundColor
+rightButtonBackgroundColor
+
+//alertview radius
+cornerRadius
+//alertview shadow opacity
+shadowOppacity
+//alertview shadow spread
+shadowSpread
+```
 
 
 
