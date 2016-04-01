@@ -36,11 +36,11 @@
         
     }];
     
-    
     [alert setRightButtonAction:^(AlertController *controller) {
         // Do something here
         
     }];
+    
     alert.cornerRadius = 8.0f;
     alert.backgroundType = BackgroundTypeTransparentLight;
     
