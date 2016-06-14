@@ -41,6 +41,8 @@
         _leftBtnTitle = leftBtnTitle;
         _rightBtnTitle = rightBtnTitle;
         _image = image;
+        _shadowOppacity = 0.4;
+        _shadowRadius = 20;
     }
     return self;
 }
@@ -53,6 +55,14 @@
     [self configureView];
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    //button display management
+    _alertView.layer.cornerRadius = _cornerRadius;
+    _lineHeight.constant = 1/[UIScreen mainScreen].scale;
+}
+
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -63,64 +73,80 @@
 
 - (void) configureView
 {
+    
+    _alertView.backgroundColor = _alertBackgroundColor?_alertBackgroundColor:[UIColor whiteColor];
+    
     //labels configuration
-
     _titleLabel.text = _title;
-    _subTitleLabel.text = _subTitle;
-    _contentLabel.text = _content;
-    
-    
-    //buttons configuration
+    [_titleLabel setFont:_titleFont];
+    [_titleLabel setTextColor:_titleColor?_titleColor:[UIColor blackColor]];
 
-    [_btn1 configureLightButtonWithTitle:_leftBtnTitle];
-    [_btn1 enableBlocking:NO];
-    [_btn1 setDelegate:self];
-    [_btn2 configureLightButtonWithTitle:_rightBtnTitle];
-    [_btn2 enableBlocking:NO];
-    [_btn2 setDelegate:self];
+    _subTitleLabel.text = _subTitle;
+    [_subTitleLabel setFont:_subtitleFont];
+    [_subTitleLabel setTextColor:_subtitleColor?_subtitleColor:[UIColor blackColor]];
     
+    _contentLabel.text = _content;
+    [_contentLabel setFont:_contentFont];
+    [_contentLabel setTextColor:_contentColor?_contentColor:[UIColor blackColor]];
     
+
+    
+    [_btn1 setButtonTapped:^(MaterialButton *btn) {
+        [self leftButtonTapped];
+    }];
+
+    [_btn2 setButtonTapped:^(MaterialButton *btn) {
+        [self rightButtonTapped];
+    }];
     
     //imageview configuration
-    
     [_imageView setImage:_image];
-
     if (!_imageView.image) {
         _imageTopMargin.constant = 20;
         _imageHeight.constant = 0;
     }
     
     //subttitle constraints configuration
-
     if (_subTitleLabel.text.length == 0) {
         _subTitleTopMargin.constant = 0;
     }
 
-    [_alertView layoutIfNeeded];
-
-    
-    //button display management
-
-    if (_rightBtnTitle.length > 0) {
-        _btn2Width.constant = -1 + _alertView.bounds.size.width/2;
-    }else{
-        [_btn2 setHidden:YES];
-    }
-    
-    _alertView.layer.cornerRadius = _cornerRadius;
-    
     
     //shadow configuration
     _shadowView.layer.masksToBounds = NO;
     _shadowView.layer.shadowOffset = CGSizeMake(0, 10);
-    _shadowView.layer.shadowRadius = 20;
-    _shadowView.layer.shadowOpacity = 0.4;
+    _shadowView.layer.shadowRadius = _shadowRadius;
+    _shadowView.layer.shadowOpacity = _shadowOppacity;
     _shadowView.layer.cornerRadius = _cornerRadius;
     
     
+    [self configureButtons];
+}
 
+- (void) configureButtons
+{
+    [_alertView layoutIfNeeded];
+    //buttons configuration
+    [_btn1 configureButtonWithTitle:_leftBtnTitle];
+    [_btn1.btn.titleLabel setFont:_buttonFont];
+    [_btn1.btn setTitleColor:_leftButtonColor?_leftButtonColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_btn1 enableBlocking:NO];
+    _btn1.backgroundColor = _leftButtonBackgroundColor?_leftButtonBackgroundColor:[UIColor whiteColor];
     
-//    [self setBackground];
+    
+    [_btn2 configureButtonWithTitle:_rightBtnTitle];
+    [_btn2.btn.titleLabel setFont:_buttonFont];
+    [_btn2.btn setTitleColor:_rightButtonColor?_rightButtonColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_btn2 enableBlocking:NO];
+    _btn2.backgroundColor = _rightButtonBackgroundColor?_rightButtonBackgroundColor:[UIColor whiteColor];
+    
+    
+    if (_rightBtnTitle.length > 0) {
+        _btn2Width.constant = _alertView.bounds.size.width/2;
+        [_btn2 setHidden:NO];
+    }else{
+        [_btn2 setHidden:YES];
+    }
 
 }
 
@@ -153,8 +179,6 @@
     
     self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-
-
 }
 
 - (void) blurConfiguration
@@ -170,20 +194,6 @@
 
     self.view.backgroundColor = [UIColor clearColor];
     self.backgroundView.backgroundColor = [UIColor clearColor];
-//    self.backgroundView.alpha = 0;
-}
-
-#pragma mark - Material Button Delegate
-
-
-- (void) buttonTapped:(id)sender
-{
-    MaterialButton * btn = (MaterialButton*) sender;
-    if (btn == _btn1) {
-        [self leftButton:sender];
-    }else{
-        [self rightButton:sender];
-    }
 }
 
 
@@ -195,8 +205,7 @@
         [self setBlackground];
         
         [controller presentViewController:self animated:YES completion:^{
-            //start animations
-            //        [self showBackgroundAnimation];
+
         }];
     });
 }
@@ -209,13 +218,17 @@
 
 #pragma mark - Button Actions
 
-- (void)leftButton:(id)sender {
-    self.leftButtonAction(self);
+- (void)leftButtonTapped {
+    if (self.leftButtonAction) {
+        self.leftButtonAction(self);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)rightButton:(id)sender {
-    self.rightButtonAction(self);
+- (void)rightButtonTapped {
+    if (self.rightButtonAction) {
+        self.rightButtonAction(self);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

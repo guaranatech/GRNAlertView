@@ -12,56 +12,34 @@
 {
     UITapGestureRecognizer * tap;
     bool blockingEnabled;
-    bool isLight;
 }
-
 
 #pragma mark - UI
 
-
-- (void) configureWithTitle:(NSString*) title
+- (void) configureButtonWithTitle:(NSString*) title
 {
-    _btn = [[UIButton alloc] init];
-    [_btn setTitle:[title uppercaseString] forState:UIControlStateNormal];
-    [_btn.titleLabel setFont:[UIFont fontWithName:@"System" size:14]];
-    [_btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_btn setUserInteractionEnabled:NO];
-    
-    [_btn setTranslatesAutoresizingMaskIntoConstraints:NO];
-
-    [self addSubview:_btn];
-
-    tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
-    [self addGestureRecognizer:tap];
-    tap.delegate = self;
-    
     [self layoutIfNeeded];
-    [self setConstraints];
-    
-    [self setBlocked:YES];
+    if (!_btn) {
+        _btn = [[UIButton alloc] initWithFrame:CGRectZero];
+    }
+    [_btn setTitle:[title uppercaseString] forState:UIControlStateNormal];
+    [self configureView];
 }
 
-- (void) configureLightButtonWithTitle:(NSString*) title
+- (void) configureView
 {
-    isLight = YES;
-    _btn = [[UIButton alloc] init];
-    [_btn setTitle:[title uppercaseString] forState:UIControlStateNormal];
-    [_btn.titleLabel setFont:[UIFont fontWithName:@"System" size:14]];
     [_btn setTitleColor:[UIColor colorWithRed:0.62 green:0.62 blue:0.62 alpha:1] forState:UIControlStateNormal];
     [_btn setUserInteractionEnabled:NO];
-    
-    [_btn setTranslatesAutoresizingMaskIntoConstraints:NO];
-    
+    _btn.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_btn];
     
     tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleTap:)];
     [self addGestureRecognizer:tap];
     tap.delegate = self;
     
-    [self setConstraints];
-    [self layoutIfNeeded];
-
     [self setBlocked:YES];
+    
+    [self setConstraints];
 }
 
 
@@ -81,10 +59,10 @@
     [NSLayoutConstraint constraintWithItem:_btn
                                  attribute:NSLayoutAttributeWidth
                                  relatedBy:NSLayoutRelationEqual
-                                    toItem:nil
-                                 attribute:NSLayoutAttributeNotAnAttribute
+                                    toItem:self
+                                 attribute:NSLayoutAttributeWidth
                                 multiplier:1.0
-                                  constant:self.bounds.size.width];
+                                  constant:0];
     [self addConstraint:widthConstraint];
     
     // Center Vertically
@@ -118,11 +96,8 @@
     CGPoint touchePoint = [tapRecognizer locationInView:self];
     
     UIView * roundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    if (isLight) {
-        roundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.05];
-    }else{
-        roundView.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.15];
-    }
+    roundView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.05];
+
     
     roundView.center = touchePoint;
     roundView.layer.cornerRadius = 10.0f;
@@ -135,7 +110,9 @@
         roundView.transform = CGAffineTransformMakeScale(50, 50);
         roundView.alpha = 0.5;
     } completion:^(BOOL finished) {
-        [_delegate buttonTapped:self];
+        if (self.buttonTapped) {
+            self.buttonTapped(self);
+        }
         [roundView removeFromSuperview];
         [self addGestureRecognizer:tap];
     }];

@@ -9,22 +9,14 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol MaterialButton <NSObject>
-/*!
- *  Triggers the selected action
- */
-@optional -(void)buttonTapped:(id)sender;
-
-@end
-
 @interface MaterialButton : UIView <UIGestureRecognizerDelegate>
 
-@property (nonatomic) id <MaterialButton> delegate;
 @property (nonatomic, strong) UIButton * btn;
 
+@property (nonatomic, copy) void (^buttonTapped)(MaterialButton* btn);
 
-- (void) configureWithTitle:(NSString*) title;
-- (void) configureLightButtonWithTitle:(NSString*) title;
+
+- (void) configureButtonWithTitle:(NSString*) title;
 
 
 - (void) setBlocked:(bool) isBlocked;
