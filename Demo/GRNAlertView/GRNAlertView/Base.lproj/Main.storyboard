@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Qgf-WS-OPg">
+            <objects>
+                <viewController id="hV8-S5-ggO" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewR-ba-sBG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zrr-eb-9fZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5xU-IH-22c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guarana_bg" translatesAutoresizingMaskIntoConstraints="NO" id="MQB-4f-M2f">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJc-Uk-2RN">
+                                <rect key="frame" x="40" y="457" width="295" height="50"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zH5-0W-aXW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="AlertView with One Button">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omc-WW-JUW">
+                                <rect key="frame" x="40" y="537" width="295" height="50"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="gBY-a4-3Be"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="AlertView with Two Buttons">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRNAlertView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ry-P6-oib">
+                                <rect key="frame" x="102.5" y="60" width="170" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPD-Hr-Emg">
+                                <rect key="frame" x="40" y="377" width="295" height="50"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="g52-N6-JLk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <state key="normal" title="AlertView with One Button &amp; Image">
+                                    <color key="titleColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MQB-4f-M2f" firstAttribute="centerX" secondItem="5xU-IH-22c" secondAttribute="centerX" id="3df-uP-oM8"/>
+                            <constraint firstItem="gJc-Uk-2RN" firstAttribute="top" secondItem="kPD-Hr-Emg" secondAttribute="bottom" constant="30" id="7Sc-Ng-heP"/>
+                            <constraint firstItem="Omc-WW-JUW" firstAttribute="top" secondItem="gJc-Uk-2RN" secondAttribute="bottom" constant="30" id="7Z7-Lk-MGC"/>
+                            <constraint firstItem="Zrr-eb-9fZ" firstAttribute="top" secondItem="MQB-4f-M2f" secondAttribute="bottom" id="AXL-Jo-SKG"/>
+                            <constraint firstItem="MQB-4f-M2f" firstAttribute="leading" secondItem="5xU-IH-22c" secondAttribute="leading" id="DJn-JQ-ndJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Omc-WW-JUW" secondAttribute="trailing" constant="40" id="Er9-Nf-8K7"/>
+                            <constraint firstItem="Omc-WW-JUW" firstAttribute="leading" secondItem="5xU-IH-22c" secondAttribute="leading" constant="40" id="H0W-GX-ZdQ"/>
+                            <constraint firstItem="kPD-Hr-Emg" firstAttribute="leading" secondItem="5xU-IH-22c" secondAttribute="leading" constant="40" id="OZd-fT-uB6"/>
+                            <constraint firstItem="MQB-4f-M2f" firstAttribute="width" secondItem="5xU-IH-22c" secondAttribute="width" id="QyS-Qt-D2g"/>
+                            <constraint firstAttribute="trailing" secondItem="kPD-Hr-Emg" secondAttribute="trailing" constant="40" id="ScM-AM-LLB"/>
+                            <constraint firstItem="Omc-WW-JUW" firstAttribute="centerX" secondItem="gJc-Uk-2RN" secondAttribute="centerX" id="UBo-B0-kAB"/>
+                            <constraint firstItem="gJc-Uk-2RN" firstAttribute="leading" secondItem="5xU-IH-22c" secondAttribute="leading" constant="40" id="VCT-PQ-ilS"/>
+                            <constraint firstItem="MQB-4f-M2f" firstAttribute="top" secondItem="5xU-IH-22c" secondAttribute="top" id="eLQ-S1-rMU"/>
+                            <constraint firstItem="Zrr-eb-9fZ" firstAttribute="top" secondItem="Omc-WW-JUW" secondAttribute="bottom" constant="80" id="gNZ-8c-BQt"/>
+                            <constraint firstItem="8ry-P6-oib" firstAttribute="top" secondItem="ewR-ba-sBG" secondAttribute="bottom" constant="40" id="isq-Bj-jhF"/>
+                            <constraint firstAttribute="trailing" secondItem="gJc-Uk-2RN" secondAttribute="trailing" constant="40" id="kME-6Z-qHh"/>
+                            <constraint firstItem="MQB-4f-M2f" firstAttribute="top" secondItem="ewR-ba-sBG" secondAttribute="bottom" id="sJn-2t-Zf5"/>
+                            <constraint firstItem="8ry-P6-oib" firstAttribute="centerX" secondItem="5xU-IH-22c" secondAttribute="centerX" id="scB-Bh-nds"/>
+                            <constraint firstAttribute="trailing" secondItem="MQB-4f-M2f" secondAttribute="trailing" id="wXW-f9-5wV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="wXW-f9-5wV"/>
+                                <exclude reference="sJn-2t-Zf5"/>
+                                <exclude reference="DJn-JQ-ndJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FM8-YU-tvr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="guarana_bg" width="776" height="1200"/>
+    </resources>
+</document>
