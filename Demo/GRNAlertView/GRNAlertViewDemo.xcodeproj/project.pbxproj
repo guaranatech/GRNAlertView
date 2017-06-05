@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C23AC7AF1EE5EE83009AE82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23AC7AD1EE5EE83009AE82A /* Main.storyboard */; };
-		C23AC7B41EE5EE83009AE82A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23AC7B21EE5EE83009AE82A /* LaunchScreen.storyboard */; };
-		C23AC7C11EE5EEEA009AE82A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AC7BC1EE5EEE9009AE82A /* AppDelegate.swift */; };
-		C23AC7C21EE5EEEA009AE82A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AC7BD1EE5EEE9009AE82A /* ViewController.swift */; };
-		C23AC7C31EE5EEEA009AE82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23AC7BF1EE5EEE9009AE82A /* Assets.xcassets */; };
-		C23AC7C41EE5EEEA009AE82A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C23AC7C01EE5EEE9009AE82A /* Info.plist */; };
-		C23AC7C71EE5F0F9009AE82A /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C23AC7C61EE5F0F9009AE82A /* AlertViewController.xib */; };
-		C23AC7C91EE5F107009AE82A /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AC7C81EE5F107009AE82A /* AlertViewController.swift */; };
-		C23AC7CB1EE5F125009AE82A /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23AC7CA1EE5F125009AE82A /* MaterialButton.swift */; };
+		C2C60DA91EE5F2E400499191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C60D9B1EE5F2E400499191 /* LaunchScreen.storyboard */; };
+		C2C60DAA1EE5F2E400499191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C60D9D1EE5F2E400499191 /* Main.storyboard */; };
+		C2C60DAB1EE5F2E400499191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA01EE5F2E400499191 /* AppDelegate.swift */; };
+		C2C60DAC1EE5F2E400499191 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA21EE5F2E400499191 /* AlertViewController.swift */; };
+		C2C60DAD1EE5F2E400499191 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C60DA31EE5F2E400499191 /* AlertViewController.xib */; };
+		C2C60DAE1EE5F2E400499191 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA41EE5F2E400499191 /* MaterialButton.swift */; };
+		C2C60DAF1EE5F2E400499191 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA51EE5F2E400499191 /* ViewController.swift */; };
+		C2C60DB01EE5F2E400499191 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C60DA71EE5F2E400499191 /* Assets.xcassets */; };
+		C2C60DB11EE5F2E400499191 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C60DA81EE5F2E400499191 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C23AC7A61EE5EE83009AE82A /* GRNAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRNAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C23AC7AE1EE5EE83009AE82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C23AC7B31EE5EE83009AE82A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C23AC7BC1EE5EEE9009AE82A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C23AC7BD1EE5EEE9009AE82A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C23AC7BF1EE5EEE9009AE82A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C23AC7C01EE5EEE9009AE82A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C23AC7C61EE5F0F9009AE82A /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
-		C23AC7C81EE5F107009AE82A /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
-		C23AC7CA1EE5F125009AE82A /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		C23AC7A61EE5EE83009AE82A /* GRNAlertViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GRNAlertViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2C60D9C1EE5F2E400499191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C2C60D9E1EE5F2E400499191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2C60DA01EE5F2E400499191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C2C60DA21EE5F2E400499191 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		C2C60DA31EE5F2E400499191 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		C2C60DA41EE5F2E400499191 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		C2C60DA51EE5F2E400499191 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2C60DA71EE5F2E400499191 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2C60DA81EE5F2E400499191 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 		C23AC79D1EE5EE83009AE82A = {
 			isa = PBXGroup;
 			children = (
-				C23AC7A81EE5EE83009AE82A /* GRNAlertView */,
+				C2C60D9A1EE5F2E400499191 /* GRNAlertViewDemo */,
 				C23AC7A71EE5EE83009AE82A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,57 +53,57 @@
 		C23AC7A71EE5EE83009AE82A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C23AC7A61EE5EE83009AE82A /* GRNAlertView.app */,
+				C23AC7A61EE5EE83009AE82A /* GRNAlertViewDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C23AC7A81EE5EE83009AE82A /* GRNAlertView */ = {
+		C2C60D9A1EE5F2E400499191 /* GRNAlertViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C23AC7BB1EE5EEE9009AE82A /* Code */,
-				C23AC7BE1EE5EEE9009AE82A /* Resources */,
+				C2C60D9B1EE5F2E400499191 /* LaunchScreen.storyboard */,
+				C2C60D9D1EE5F2E400499191 /* Main.storyboard */,
+				C2C60D9F1EE5F2E400499191 /* Code */,
+				C2C60DA61EE5F2E400499191 /* Resources */,
 			);
-			path = GRNAlertView;
+			path = GRNAlertViewDemo;
 			sourceTree = "<group>";
 		};
-		C23AC7BB1EE5EEE9009AE82A /* Code */ = {
+		C2C60D9F1EE5F2E400499191 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				C23AC7BC1EE5EEE9009AE82A /* AppDelegate.swift */,
-				C23AC7BD1EE5EEE9009AE82A /* ViewController.swift */,
-				C23AC7C51EE5F0D3009AE82A /* GRNAlertView */,
+				C2C60DA01EE5F2E400499191 /* AppDelegate.swift */,
+				C2C60DA51EE5F2E400499191 /* ViewController.swift */,
+				C2C60DA11EE5F2E400499191 /* GRNAlertView */,
 			);
 			path = Code;
 			sourceTree = "<group>";
 		};
-		C23AC7BE1EE5EEE9009AE82A /* Resources */ = {
+		C2C60DA11EE5F2E400499191 /* GRNAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				C23AC7AD1EE5EE83009AE82A /* Main.storyboard */,
-				C23AC7B21EE5EE83009AE82A /* LaunchScreen.storyboard */,
-				C23AC7BF1EE5EEE9009AE82A /* Assets.xcassets */,
-				C23AC7C01EE5EEE9009AE82A /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		C23AC7C51EE5F0D3009AE82A /* GRNAlertView */ = {
-			isa = PBXGroup;
-			children = (
-				C23AC7C61EE5F0F9009AE82A /* AlertViewController.xib */,
-				C23AC7C81EE5F107009AE82A /* AlertViewController.swift */,
-				C23AC7CA1EE5F125009AE82A /* MaterialButton.swift */,
+				C2C60DA21EE5F2E400499191 /* AlertViewController.swift */,
+				C2C60DA31EE5F2E400499191 /* AlertViewController.xib */,
+				C2C60DA41EE5F2E400499191 /* MaterialButton.swift */,
 			);
 			path = GRNAlertView;
+			sourceTree = "<group>";
+		};
+		C2C60DA61EE5F2E400499191 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2C60DA71EE5F2E400499191 /* Assets.xcassets */,
+				C2C60DA81EE5F2E400499191 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C23AC7A51EE5EE83009AE82A /* GRNAlertView */ = {
+		C23AC7A51EE5EE83009AE82A /* GRNAlertViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C23AC7B81EE5EE83009AE82A /* Build configuration list for PBXNativeTarget "GRNAlertView" */;
+			buildConfigurationList = C23AC7B81EE5EE83009AE82A /* Build configuration list for PBXNativeTarget "GRNAlertViewDemo" */;
 			buildPhases = (
 				C23AC7A21EE5EE83009AE82A /* Sources */,
 				C23AC7A31EE5EE83009AE82A /* Frameworks */,
@@ -113,9 +113,9 @@
 			);
 			dependencies = (
 			);
-			name = GRNAlertView;
+			name = GRNAlertViewDemo;
 			productName = GRNAlertView;
-			productReference = C23AC7A61EE5EE83009AE82A /* GRNAlertView.app */;
+			productReference = C23AC7A61EE5EE83009AE82A /* GRNAlertViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,7 +134,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C23AC7A11EE5EE83009AE82A /* Build configuration list for PBXProject "GRNAlertView" */;
+			buildConfigurationList = C23AC7A11EE5EE83009AE82A /* Build configuration list for PBXProject "GRNAlertViewDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -147,7 +147,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C23AC7A51EE5EE83009AE82A /* GRNAlertView */,
+				C23AC7A51EE5EE83009AE82A /* GRNAlertViewDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -157,11 +157,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C23AC7C41EE5EEEA009AE82A /* Info.plist in Resources */,
-				C23AC7C71EE5F0F9009AE82A /* AlertViewController.xib in Resources */,
-				C23AC7B41EE5EE83009AE82A /* LaunchScreen.storyboard in Resources */,
-				C23AC7C31EE5EEEA009AE82A /* Assets.xcassets in Resources */,
-				C23AC7AF1EE5EE83009AE82A /* Main.storyboard in Resources */,
+				C2C60DA91EE5F2E400499191 /* LaunchScreen.storyboard in Resources */,
+				C2C60DAA1EE5F2E400499191 /* Main.storyboard in Resources */,
+				C2C60DB01EE5F2E400499191 /* Assets.xcassets in Resources */,
+				C2C60DB11EE5F2E400499191 /* Info.plist in Resources */,
+				C2C60DAD1EE5F2E400499191 /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,32 +172,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C23AC7C21EE5EEEA009AE82A /* ViewController.swift in Sources */,
-				C23AC7C91EE5F107009AE82A /* AlertViewController.swift in Sources */,
-				C23AC7CB1EE5F125009AE82A /* MaterialButton.swift in Sources */,
-				C23AC7C11EE5EEEA009AE82A /* AppDelegate.swift in Sources */,
+				C2C60DAB1EE5F2E400499191 /* AppDelegate.swift in Sources */,
+				C2C60DAC1EE5F2E400499191 /* AlertViewController.swift in Sources */,
+				C2C60DAF1EE5F2E400499191 /* ViewController.swift in Sources */,
+				C2C60DAE1EE5F2E400499191 /* MaterialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C23AC7AD1EE5EE83009AE82A /* Main.storyboard */ = {
+		C2C60D9B1EE5F2E400499191 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C23AC7AE1EE5EE83009AE82A /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		C23AC7B21EE5EE83009AE82A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C23AC7B31EE5EE83009AE82A /* Base */,
+				C2C60D9C1EE5F2E400499191 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
+			sourceTree = "<group>";
+		};
+		C2C60D9D1EE5F2E400499191 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2C60D9E1EE5F2E400499191 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -302,7 +300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/GRNAlertView/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GRNAlertViewDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.guarana.GRNAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -314,7 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "$(SRCROOT)/GRNAlertView/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GRNAlertViewDemo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.guarana.GRNAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -325,7 +323,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C23AC7A11EE5EE83009AE82A /* Build configuration list for PBXProject "GRNAlertView" */ = {
+		C23AC7A11EE5EE83009AE82A /* Build configuration list for PBXProject "GRNAlertViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C23AC7B61EE5EE83009AE82A /* Debug */,
@@ -334,13 +332,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C23AC7B81EE5EE83009AE82A /* Build configuration list for PBXNativeTarget "GRNAlertView" */ = {
+		C23AC7B81EE5EE83009AE82A /* Build configuration list for PBXNativeTarget "GRNAlertViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C23AC7B91EE5EE83009AE82A /* Debug */,
 				C23AC7BA1EE5EE83009AE82A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C23AC7A51EE5EE83009AE82A"
-               BuildableName = "GRNAlertView.app"
-               BlueprintName = "GRNAlertView"
-               ReferencedContainer = "container:GRNAlertView.xcodeproj">
+               BuildableName = "GRNAlertViewDemo.app"
+               BlueprintName = "GRNAlertViewDemo"
+               ReferencedContainer = "container:GRNAlertViewDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C23AC7A51EE5EE83009AE82A"
-            BuildableName = "GRNAlertView.app"
-            BlueprintName = "GRNAlertView"
-            ReferencedContainer = "container:GRNAlertView.xcodeproj">
+            BuildableName = "GRNAlertViewDemo.app"
+            BlueprintName = "GRNAlertViewDemo"
+            ReferencedContainer = "container:GRNAlertViewDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C23AC7A51EE5EE83009AE82A"
-            BuildableName = "GRNAlertView.app"
-            BlueprintName = "GRNAlertView"
-            ReferencedContainer = "container:GRNAlertView.xcodeproj">
+            BuildableName = "GRNAlertViewDemo.app"
+            BlueprintName = "GRNAlertViewDemo"
+            ReferencedContainer = "container:GRNAlertViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C23AC7A51EE5EE83009AE82A"
-            BuildableName = "GRNAlertView.app"
-            BlueprintName = "GRNAlertView"
-            ReferencedContainer = "container:GRNAlertView.xcodeproj">
+            BuildableName = "GRNAlertViewDemo.app"
+            BlueprintName = "GRNAlertViewDemo"
+            ReferencedContainer = "container:GRNAlertViewDemo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
