@@ -10,9 +10,9 @@
 		C2C60DA91EE5F2E400499191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C60D9B1EE5F2E400499191 /* LaunchScreen.storyboard */; };
 		C2C60DAA1EE5F2E400499191 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C60D9D1EE5F2E400499191 /* Main.storyboard */; };
 		C2C60DAB1EE5F2E400499191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA01EE5F2E400499191 /* AppDelegate.swift */; };
-		C2C60DAC1EE5F2E400499191 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA21EE5F2E400499191 /* AlertViewController.swift */; };
+		C2C60DAC1EE5F2E400499191 /* GRNAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA21EE5F2E400499191 /* GRNAlertViewController.swift */; };
 		C2C60DAD1EE5F2E400499191 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2C60DA31EE5F2E400499191 /* AlertViewController.xib */; };
-		C2C60DAE1EE5F2E400499191 /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA41EE5F2E400499191 /* MaterialButton.swift */; };
+		C2C60DAE1EE5F2E400499191 /* GRNMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA41EE5F2E400499191 /* GRNMaterialButton.swift */; };
 		C2C60DAF1EE5F2E400499191 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C60DA51EE5F2E400499191 /* ViewController.swift */; };
 		C2C60DB01EE5F2E400499191 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C60DA71EE5F2E400499191 /* Assets.xcassets */; };
 		C2C60DB11EE5F2E400499191 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C60DA81EE5F2E400499191 /* Info.plist */; };
@@ -23,9 +23,9 @@
 		C2C60D9C1EE5F2E400499191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2C60D9E1EE5F2E400499191 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2C60DA01EE5F2E400499191 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2C60DA21EE5F2E400499191 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		C2C60DA21EE5F2E400499191 /* GRNAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRNAlertViewController.swift; sourceTree = "<group>"; };
 		C2C60DA31EE5F2E400499191 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
-		C2C60DA41EE5F2E400499191 /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		C2C60DA41EE5F2E400499191 /* GRNMaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRNMaterialButton.swift; sourceTree = "<group>"; };
 		C2C60DA51EE5F2E400499191 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C2C60DA71EE5F2E400499191 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2C60DA81EE5F2E400499191 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,8 +61,6 @@
 		C2C60D9A1EE5F2E400499191 /* GRNAlertViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				C2C60D9B1EE5F2E400499191 /* LaunchScreen.storyboard */,
-				C2C60D9D1EE5F2E400499191 /* Main.storyboard */,
 				C2C60D9F1EE5F2E400499191 /* Code */,
 				C2C60DA61EE5F2E400499191 /* Resources */,
 			);
@@ -82,9 +80,9 @@
 		C2C60DA11EE5F2E400499191 /* GRNAlertView */ = {
 			isa = PBXGroup;
 			children = (
-				C2C60DA21EE5F2E400499191 /* AlertViewController.swift */,
+				C2C60DA21EE5F2E400499191 /* GRNAlertViewController.swift */,
 				C2C60DA31EE5F2E400499191 /* AlertViewController.xib */,
-				C2C60DA41EE5F2E400499191 /* MaterialButton.swift */,
+				C2C60DA41EE5F2E400499191 /* GRNMaterialButton.swift */,
 			);
 			path = GRNAlertView;
 			sourceTree = "<group>";
@@ -92,6 +90,8 @@
 		C2C60DA61EE5F2E400499191 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C2C60D9B1EE5F2E400499191 /* LaunchScreen.storyboard */,
+				C2C60D9D1EE5F2E400499191 /* Main.storyboard */,
 				C2C60DA71EE5F2E400499191 /* Assets.xcassets */,
 				C2C60DA81EE5F2E400499191 /* Info.plist */,
 			);
@@ -173,9 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C60DAB1EE5F2E400499191 /* AppDelegate.swift in Sources */,
-				C2C60DAC1EE5F2E400499191 /* AlertViewController.swift in Sources */,
+				C2C60DAC1EE5F2E400499191 /* GRNAlertViewController.swift in Sources */,
 				C2C60DAF1EE5F2E400499191 /* ViewController.swift in Sources */,
-				C2C60DAE1EE5F2E400499191 /* MaterialButton.swift in Sources */,
+				C2C60DAE1EE5F2E400499191 /* GRNMaterialButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +188,7 @@
 				C2C60D9C1EE5F2E400499191 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C2C60D9D1EE5F2E400499191 /* Main.storyboard */ = {
@@ -196,6 +197,7 @@
 				C2C60D9E1EE5F2E400499191 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

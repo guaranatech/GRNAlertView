@@ -24,11 +24,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guarana_bg" translatesAutoresizingMaskIntoConstraints="NO" id="MIz-0I-Ssr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GRNAlertViewDemo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPc-0k-mHs">
+                                <rect key="frame" x="86" y="60" width="243" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bPc-0k-mHs" firstAttribute="centerX" secondItem="MIz-0I-Ssr" secondAttribute="centerX" id="99U-V9-9Hn"/>
                             <constraint firstAttribute="trailing" secondItem="MIz-0I-Ssr" secondAttribute="trailing" id="GPN-Bg-g1U"/>
                             <constraint firstItem="MIz-0I-Ssr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="J2v-UO-aQr"/>
+                            <constraint firstItem="bPc-0k-mHs" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="40" id="O17-e7-i59"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="MIz-0I-Ssr" secondAttribute="bottom" id="Rci-PU-aoW"/>
                             <constraint firstItem="MIz-0I-Ssr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="krQ-UK-gmS"/>
                         </constraints>
