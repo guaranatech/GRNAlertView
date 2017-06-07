@@ -4,16 +4,20 @@ This library has been created by [www.guarana.io](http://www.guarana.io)
 
 This very easy to use AlertView allows you to interact in a nice way with your users while preserving the aesthetics of the screen.
 
+## Version
+
+Project has been updated to Swift.
+For Objective-C use 1.0.3 release.
+
 ## Installation 
 
 * Cocoapods
 
-
 ``` 
-pod 'GRNAlertView', '~> 1.0'
+pod 'GRNAlertView', '~> 2.0'
 ```
 
-[CLick here](https://guides.cocoapods.org/using/getting-started.html) more information about cocoapods and how to install it 
+[Click here](https://guides.cocoapods.org/using/getting-started.html) more information about cocoapods and how to install it 
 
 * Manual
 
@@ -22,91 +26,85 @@ Drag the folder GRNAlertView into your project.
 
 ## How to use it
 
-Instantiate your AlertContoller
+Instantiate your GRNAlertViewController.
+Alert can be initialized in two ways.
 
-Note : If you want only one button, just let the rightButtonTitle string empty.
+Initializers:
 
-``` objectivec
-AlertController * alert = [[AlertController alloc] initWithTitle:@"My Title" subTitle:@"With a sub-title here" content:@"This is an alert view whith image Type some content here." leftButtonTitle:@"OK" rightButtonTitle:@"" andImage:[UIImage imageNamed:@"globe"]];
+``` swift
+init(title: String, message: String? = nil)
+init(content: GRNAlertContent, layout: GRNAlertLayout? = nil, firstButtonHandler: GRNAlertHandler? = nil, secondButtonHandler: GRNAlertHandler? = nil)
 ```
 
-Set the button actions
+The easiest - just pass title and message as arguments. Message is optional.
+It initalizes default alert with title and/or message and simple 'OK' button, which dismiss the alert.
 
-``` objectivec
-[alert setLeftButtonAction:^(AlertController * controller) {
-    // Do something here
-    
-}];
-
-[alert setRightButtonAction:^(AlertController *controller) {
-    // Do something here
-    
-}];
+``` swift
+let alert = GRNAlertViewController(title: "Title", message: "Message")
 ```
-
 
 Show the alert like so
 
-``` objectivec
-[alert showOn:self];
-    
+``` swift
+alert.show(on: self)
 ```
-
-Set the type of background you want :
-
-``` objectivec
-alert.backgroundType = BackgroundTypeTransparentLight;
-```
-
-*   BackgroundTypeDefault (background is transparent)
-
-*   BackgroundTypeTransparentLight (background is white with an alpha)
-
-![Light](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot1.png)
-
-*   BackgroundTypeTransparentDark (background is black with an alpha)
-
-![Dark](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot2.png)
-
-*   BackgroundTypeBlurred  (background is blurred)
-
-![Blurred](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot3.png)
-
 
 ## Customization
 
+For customization, there are two structures.
 
+``` swift
+struct GRNAlertLayout {
+    var backgroundType: GRNAlertViewController.BackgroundType = .transparentDark
+    var titleFont: UIFont = .boldSystemFont(ofSize: 17.0)
+    var subtitleFont: UIFont = .systemFont(ofSize: 14.0)
+    var messageFont: UIFont = .systemFont(ofSize: 16.0)
+    var buttonsFont: UIFont = .boldSystemFont(ofSize: 16.0)
+    var textColor: UIColor = .black
+    var backgroundColor: UIColor = .white
+    var cornerRadius: CGFloat = 8.0
+}
 
-``` objectivec
-//label text colors
-titleColor
-subtitleColor
-contentColor
-
-//button tint colors
-leftButtonColor
-rightButtonColor
-
-//background of the alertview frame
-alertBackgroundColor
-//background of the buttons
-leftButtonBackgroundColor
-rightButtonBackgroundColor
-
-//alertview radius
-cornerRadius
-//alertview shadow opacity
-shadowOppacity
-//alertview shadow spread
-shadowSpread
+struct GRNAlertContent {
+    var title: String?
+    var subtitle: String?
+    var message: String?
+    var image: UIImage?
+    var firstButtonTitle: String?
+    var secondButtonTitle: String?
+}
 ```
 
+When you want to customize it, just create custom objects and set whatever you want.
+Layout and handlers parameters are optional in init method.
+``` swift
+var content = GRNAlertContent()
+var layout = GRNAlertLayout()
+// ... configure content and layout objects as you want
+let alert = GRNAlertViewController(content: content, layout: layout)
+```
+OR
+``` swift
+let alert = GRNAlertViewController(content: content, layout: nil, firstButtonHandler: { alert in
+        // do whatever you want    
+}) { alert in
+        // do whatever you want   
+}
+```
 
+There are 3 possible background types:
+``` swift
+enum BackgroundType {
+        case clear, transparentLight, transparentDark
+}
+```
 
-## Coming soon
+*   .clear (background is transparent)
 
-* More Transitions
-* More Animations
-* Dynamic buttons (vertical/horizontal)
-* Rating options
-* Cocoapods
+*   .transparentLight (background is white with an alpha)
+
+![Light](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot1.png)
+
+*   .transparentDark (background is black with an alpha)
+
+![Dark](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot2.png)
