@@ -22,10 +22,19 @@ internal class GRNMaterialButton: UIView {
     var tapHandler: GRNMaterialButtonTapHandler? = nil
     var title: String? {
         set {
-            titleLabel.text = title?.uppercased()
+            titleLabel.text = newValue?.uppercased()
         }
         get {
             return titleLabel.text
+        }
+    }
+    
+    var font: UIFont? {
+        set {
+            titleLabel.font = newValue
+        }
+        get {
+            return titleLabel.font
         }
     }
     
