@@ -29,8 +29,12 @@ class ViewController: UIViewController {
         content.subtitle = subtitleTextField.text
         content.message = messageTextField.text
         content.image = imageSwitch.isOn ? #imageLiteral(resourceName: "alert_icn") : nil
-        content.firstButtonTitle = leftButtonTitleTextField.text
-        content.secondButtonTitle = rightButtonTitleTextField.text
+        if (leftButtonTitleTextField.text?.characters.count)! > 0 {
+            content.firstButtonTitle = leftButtonTitleTextField.text
+        }
+        if (rightButtonTitleTextField.text?.characters.count)! > 0 {
+            content.secondButtonTitle = rightButtonTitleTextField.text
+        }
         
         var layout = GRNAlertLayout()
         if backgroundTypeControl.selectedSegmentIndex == 0 {
@@ -44,25 +48,27 @@ class ViewController: UIViewController {
         if textColorControl.selectedSegmentIndex == 0 {
             layout.textColor = .black
         } else if textColorControl.selectedSegmentIndex == 1 {
-            layout.textColor = UIColor.red.withAlphaComponent(0.5)
+            layout.textColor = UIColor.red
         } else {
-            layout.textColor = UIColor.green.withAlphaComponent(0.5)
+            layout.textColor = UIColor.green
         }
         
         if backgroundColorControl.selectedSegmentIndex == 0 {
-            layout.backgroundColor = .clear
+            layout.backgroundColor = .white
         } else if backgroundColorControl.selectedSegmentIndex == 1 {
-            layout.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+            layout.backgroundColor = UIColor.lightGray
         } else {
-            layout.backgroundColor = UIColor.blue.withAlphaComponent(0.3)
+            layout.backgroundColor = UIColor.blue
         }
         
         layout.cornerRadius = CGFloat(cornerRadiusSlider.value)
-        let font = titleTextField.font!
-        layout.messageFont = font.withSize(17.0)
-        layout.subtitleFont = font.withSize(14.0)
-        layout.messageFont = font.withSize(16.0)
-        layout.buttonsFont = font.withSize(16.0)
+        if customFontSwitch.isOn {
+            let font = titleTextField.font!
+            layout.messageFont = font.withSize(17.0)
+            layout.subtitleFont = font.withSize(14.0)
+            layout.messageFont = font.withSize(16.0)
+            layout.buttonsFont = font.withSize(16.0)
+        }
         
         let alert = GRNAlertViewController(content: content, layout: layout)
         alert.show(on: self)

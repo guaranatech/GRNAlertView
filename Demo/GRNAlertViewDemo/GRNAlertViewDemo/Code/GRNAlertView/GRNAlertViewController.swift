@@ -18,7 +18,7 @@ struct GRNAlertLayout {
     var backgroundColor: UIColor = .white
     var cornerRadius: CGFloat = 8.0
     
-    init(backgroundType: GRNAlertViewController.BackgroundType = .clear,
+    init(backgroundType: GRNAlertViewController.BackgroundType = .transparentDark,
          titleFont: UIFont = .boldSystemFont(ofSize: 17.0),
          subtitleFont: UIFont = .systemFont(ofSize: 14.0),
          messageFont: UIFont = .systemFont(ofSize: 16.0),
@@ -168,11 +168,14 @@ private extension GRNAlertViewController {
             contentStackView.removeArrangedSubview(imageView)
         }
 
-        secondButton.isHidden = secondButtonHandler == nil
-        buttonsSeparator.isHidden = secondButtonHandler == nil
+        secondButton.isHidden = content.secondButtonTitle == nil
+        buttonsSeparator.isHidden = content.secondButtonTitle == nil
     }
     
     private func configureLayout() {
+        if layout == nil {
+            layout = GRNAlertLayout()
+        }
         titleLabel.font = layout?.titleFont
         subtitleLabel.font = layout?.subtitleFont
         messageLabel.font = layout?.messageFont
@@ -181,6 +184,11 @@ private extension GRNAlertViewController {
         alertView.layer.cornerRadius = layout?.cornerRadius ?? 8.0
         backgroundType = layout?.backgroundType ?? .transparentDark
         alertView.backgroundColor = layout?.backgroundColor
+        
+        titleLabel.textColor = layout?.textColor
+        subtitleLabel.textColor = layout?.textColor
+        messageLabel.textColor = layout?.textColor
+        
     }
     
     func addShadowLayer() {
@@ -219,9 +227,9 @@ private extension GRNAlertViewController {
         case .clear:
             backgroundView.backgroundColor = .clear
         case .transparentDark:
-            backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.2)
-        case .transparentLight:
             backgroundView.backgroundColor = UIColor(white: 0, alpha: 0.4)
+        case .transparentLight:
+            backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         }
     }
     
