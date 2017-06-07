@@ -22,12 +22,18 @@
                 <outlet property="contentLabel" destination="OhY-cI-VPN" id="zcP-TW-kAQ"/>
                 <outlet property="imageHeight" destination="Grl-ct-7eR" id="Mzb-CE-0CW"/>
                 <outlet property="imageTopMargin" destination="b0l-OI-p5L" id="drw-ac-q0s"/>
-                <outlet property="imageView" destination="2kl-3e-Kj8" id="CM9-yP-kZS"/>
+                <outlet property="imageView" destination="2kl-3e-Kj8" id="Tbq-mR-gv3"/>
+                <outlet property="leftButton" destination="DVE-gG-iVm" id="2UQ-KJ-6Y8"/>
+                <outlet property="leftButtonWidthConstraint" destination="8mn-z3-K0h" id="KZL-si-gaW"/>
                 <outlet property="lineHeight" destination="5Xc-sM-k3l" id="6x4-dM-amc"/>
+                <outlet property="messageLabel" destination="OhY-cI-VPN" id="d89-N7-dZE"/>
+                <outlet property="rightButton" destination="lS4-FH-gHA" id="9OT-kJ-TPW"/>
+                <outlet property="rightButtonWidthConstraint" destination="yTD-Zl-vTv" id="DCs-fs-mFY"/>
                 <outlet property="shadowView" destination="XgD-i3-HgL" id="B5B-lP-Mhg"/>
                 <outlet property="subTitleLabel" destination="EZo-Jb-oMF" id="RUj-aT-H6y"/>
                 <outlet property="subTitleTopMargin" destination="4vg-I1-LwG" id="qyy-8y-cRB"/>
-                <outlet property="titleLabel" destination="tLF-6Q-AWW" id="Fqa-36-jFZ"/>
+                <outlet property="subtitleLabel" destination="EZo-Jb-oMF" id="t4v-mF-Oei"/>
+                <outlet property="titleLabel" destination="tLF-6Q-AWW" id="L94-9R-h2G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,6 +46,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <connections>
+                        <action selector="backgroundButtonAction:" destination="-1" eventType="touchUpInside" id="RBe-zw-JIQ"/>
                         <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="rRF-Ck-ajG"/>
                     </connections>
                 </button>
@@ -83,14 +90,14 @@
                                 <constraint firstAttribute="height" constant="1" id="5Xc-sM-k3l"/>
                             </constraints>
                         </view>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVE-gG-iVm" customClass="MaterialButton">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DVE-gG-iVm" customClass="GRNMaterialButton" customModule="GRNAlertViewDemo" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="229" width="245" height="60"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="3rS-yE-dzC"/>
                             </constraints>
                         </view>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lS4-FH-gHA" customClass="MaterialButton">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lS4-FH-gHA" customClass="GRNMaterialButton" customModule="GRNAlertViewDemo" customModuleProvider="target">
                             <rect key="frame" x="284" y="229" width="51" height="60"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
