@@ -15,6 +15,7 @@ internal class GRNMaterialButton: UIView {
     // MARK: Init
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        addTitleLabel()
         configureView()
     }
     
@@ -46,6 +47,12 @@ internal class GRNMaterialButton: UIView {
 
 // MARK: Private
 fileprivate extension GRNMaterialButton {
+    
+    func addTitleLabel() {
+        titleLabel = UILabel(frame: frame)
+        titleLabel.textAlignment = .center
+        addSubview(titleLabel)
+    }
     
     func configureView() {
         let color = UIColor(red: 0.62, green: 0.62, blue: 0.62, alpha: 1)
@@ -94,11 +101,15 @@ fileprivate extension GRNMaterialButton {
             roundView.alpha = 0.5
         }) {[weak self] finished in
             guard let weakSelf = self else { return}
+            roundView.removeFromSuperview()
+            weakSelf.addGestureRecognizer(weakSelf.tapGestureRecognizer)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+            guard let weakSelf = self else { return}
             if let handler = weakSelf.tapHandler {
                 handler(weakSelf)
             }
-            roundView.removeFromSuperview()
-            weakSelf.addGestureRecognizer(weakSelf.tapGestureRecognizer)
         }
     }
     

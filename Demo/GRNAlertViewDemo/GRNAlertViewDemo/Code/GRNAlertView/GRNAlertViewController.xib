@@ -14,6 +14,7 @@
                 <outlet property="alertView" destination="x8x-l5-AcR" id="4ca-rS-FMg"/>
                 <outlet property="backgroundView" destination="Bl6-YY-vKo" id="GWp-AK-OVi"/>
                 <outlet property="buttonsSeparator" destination="SIf-5k-k8T" id="RYE-8E-qbU"/>
+                <outlet property="contentStackView" destination="cc4-YU-CiJ" id="acC-od-Jw0"/>
                 <outlet property="firstButton" destination="DVE-gG-iVm" id="PqP-NZ-n1L"/>
                 <outlet property="imageView" destination="2kl-3e-Kj8" id="Tbq-mR-gv3"/>
                 <outlet property="messageLabel" destination="OhY-cI-VPN" id="d89-N7-dZE"/>
@@ -40,10 +41,10 @@
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8x-l5-AcR">
-                    <rect key="frame" x="20" y="192" width="335" height="283"/>
+                    <rect key="frame" x="20" y="191.5" width="335" height="284"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cc4-YU-CiJ">
-                            <rect key="frame" x="20" y="15" width="295" height="187"/>
+                            <rect key="frame" x="20" y="20" width="295" height="187"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2kl-3e-Kj8">
                                     <rect key="frame" x="0.0" y="0.0" width="295" height="100"/>
@@ -69,14 +70,14 @@
                             </subviews>
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rVF-8K-LW9">
-                            <rect key="frame" x="0.0" y="222" width="335" height="1"/>
+                            <rect key="frame" x="0.0" y="223" width="335" height="1"/>
                             <color key="backgroundColor" red="0.78823529411764703" green="0.81960784313725488" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="5Xc-sM-k3l"/>
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJO-ec-OlG">
-                            <rect key="frame" x="0.0" y="223" width="335" height="60"/>
+                            <rect key="frame" x="0.0" y="224" width="335" height="60"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVE-gG-iVm" customClass="GRNMaterialButton" customModule="GRNAlertViewDemo" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="167" height="60"/>
@@ -113,11 +114,11 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="cc4-YU-CiJ" secondAttribute="trailing" constant="20" id="4Tj-fo-Hmc"/>
                         <constraint firstItem="rVF-8K-LW9" firstAttribute="leading" secondItem="x8x-l5-AcR" secondAttribute="leading" id="PhE-PK-aYj"/>
-                        <constraint firstItem="cc4-YU-CiJ" firstAttribute="top" secondItem="x8x-l5-AcR" secondAttribute="top" constant="15" id="PwY-SP-R1h"/>
+                        <constraint firstItem="cc4-YU-CiJ" firstAttribute="top" secondItem="x8x-l5-AcR" secondAttribute="top" constant="20" id="PwY-SP-R1h"/>
                         <constraint firstAttribute="trailing" secondItem="PJO-ec-OlG" secondAttribute="trailing" id="S4x-M8-Uxv"/>
                         <constraint firstAttribute="bottom" secondItem="PJO-ec-OlG" secondAttribute="bottom" id="YUY-m8-rMO"/>
                         <constraint firstItem="PJO-ec-OlG" firstAttribute="top" secondItem="rVF-8K-LW9" secondAttribute="bottom" id="d1A-zi-aUk"/>
-                        <constraint firstItem="rVF-8K-LW9" firstAttribute="top" secondItem="cc4-YU-CiJ" secondAttribute="bottom" constant="20" id="k6y-1A-bql"/>
+                        <constraint firstItem="rVF-8K-LW9" firstAttribute="top" secondItem="cc4-YU-CiJ" secondAttribute="bottom" constant="16" id="k6y-1A-bql"/>
                         <constraint firstItem="PJO-ec-OlG" firstAttribute="leading" secondItem="x8x-l5-AcR" secondAttribute="leading" id="kFL-9s-y0c"/>
                         <constraint firstAttribute="trailing" secondItem="rVF-8K-LW9" secondAttribute="trailing" id="mzU-yN-hyc"/>
                         <constraint firstItem="cc4-YU-CiJ" firstAttribute="leading" secondItem="x8x-l5-AcR" secondAttribute="leading" constant="20" id="xkd-GU-s9C"/>

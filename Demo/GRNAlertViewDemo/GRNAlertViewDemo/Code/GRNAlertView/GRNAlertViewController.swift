@@ -9,23 +9,23 @@
 import UIKit
 
 struct GRNAlertLayout {
-    var backgroundType: GRNAlertViewController.BackgroundType
-    var titleFont: UIFont
-    var subtitleFont: UIFont
-    var messageFont: UIFont
-    var buttonsFont: UIFont
-    var textColor: UIColor
-    var backgroundColor: UIColor
-    var cornerRadius: CGFloat
+    var backgroundType: GRNAlertViewController.BackgroundType = .transparentDark
+    var titleFont: UIFont = .boldSystemFont(ofSize: 17.0)
+    var subtitleFont: UIFont = .systemFont(ofSize: 14.0)
+    var messageFont: UIFont = .systemFont(ofSize: 16.0)
+    var buttonsFont: UIFont = .boldSystemFont(ofSize: 16.0)
+    var textColor: UIColor = .black
+    var backgroundColor: UIColor = .white
+    var cornerRadius: CGFloat = 8.0
     
-    init(backgroundType: GRNAlertViewController.BackgroundType = .default,
+    init(backgroundType: GRNAlertViewController.BackgroundType = .clear,
          titleFont: UIFont = .boldSystemFont(ofSize: 17.0),
          subtitleFont: UIFont = .systemFont(ofSize: 14.0),
          messageFont: UIFont = .systemFont(ofSize: 16.0),
          buttonsFont: UIFont = .boldSystemFont(ofSize: 16.0),
          textColor: UIColor = .black,
          backgroundColor: UIColor = .white,
-         cornerRadius: CGFloat = 0.0) {
+         cornerRadius: CGFloat = 8.0) {
         self.titleFont = titleFont
         self.subtitleFont = subtitleFont
         self.messageFont = messageFont
@@ -39,14 +39,14 @@ struct GRNAlertLayout {
 }
 
 struct GRNAlertContent {
-    var title: String
+    var title: String?
     var subtitle: String?
     var message: String?
     var image: UIImage?
     var firstButtonTitle: String?
     var secondButtonTitle: String?
     
-    init(title: String,
+    init(title: String? = nil,
          subtitle: String? = nil,
          message: String? = nil,
          image: UIImage? = nil,
@@ -66,44 +66,32 @@ class GRNAlertViewController: UIViewController {
 
     //MARK: Public properties
     typealias GRNAlertHandler = (_ alertController: GRNAlertViewController) -> Void
-    init(content: GRNAlertContent,
+    convenience init(content: GRNAlertContent,
          layout: GRNAlertLayout? = nil,
          firstButtonHandler: GRNAlertHandler? = nil,
          secondButtonHandler: GRNAlertHandler? = nil) {
         
-        super.init(nibName: "", bundle: Bundle(for: GRNAlertViewController.self))
-        
-        self.titleLabel.font = layout?.titleFont
-        self.subtitleLabel.font = layout?.subtitleFont
-        self.messageLabel.font = layout?.messageFont
-        self.firstButton.font = layout?.buttonsFont
-        self.secondButton.font = layout?.buttonsFont
-        self.backgroundType = layout?.backgroundType ?? .default
-        self.alertView.backgroundColor = layout?.backgroundColor
-        
-        self.firstButton.title = content.firstButtonTitle
-        self.secondButton.title = content.secondButtonTitle
-        self.titleLabel.text = content.title
-        self.subtitleLabel.text = content.subtitle
-        self.messageLabel.text = content.message
-        self.imageView.image = content.image
-        
-        self.subtitleLabel.isHidden = content.subtitle == nil
-        self.messageLabel.isHidden = content.message == nil
-        
-        self.secondButton.isHidden = secondButtonHandler == nil
-        self.buttonsSeparator.isHidden = secondButtonHandler == nil
-        
+        self.init(nibName: String(describing: GRNAlertViewController.self), bundle: Bundle(for: GRNAlertViewController.self))
+        self.content = content
+        self.layout = layout
         self.firstButtonHandler = firstButtonHandler
         self.secondButtonHandler = secondButtonHandler
     }
-    
+    convenience init(title: String, message: String? = nil) {
+        let content = GRNAlertContent(title: "title", message: message)
+        self.init(content: content)
+    }
     
     //MARK: Private properties
+    fileprivate var content: GRNAlertContent!
+    fileprivate var layout: GRNAlertLayout?
+    
+    fileprivate var shadowAdded: Bool = false
     fileprivate var shadowLayer: CAShapeLayer!
     @IBOutlet fileprivate weak var alertView: UIView!
     @IBOutlet fileprivate weak var backgroundView: UIView!
     
+    @IBOutlet fileprivate weak var contentStackView: UIStackView!
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var subtitleLabel: UILabel!
     @IBOutlet fileprivate weak var messageLabel: UILabel!
@@ -113,13 +101,16 @@ class GRNAlertViewController: UIViewController {
     @IBOutlet weak var buttonsSeparator: UIView!
     @IBOutlet fileprivate weak var secondButton: GRNMaterialButton!
     
-    fileprivate var backgroundType: BackgroundType = .default
+    fileprivate var backgroundType: BackgroundType = .transparentDark
     
     fileprivate var firstButtonHandler: GRNAlertHandler?
     fileprivate var secondButtonHandler: GRNAlertHandler?
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     // MARK: Lifecycle
@@ -129,11 +120,17 @@ class GRNAlertViewController: UIViewController {
         configureView()
     }
     
+    override func viewDidLayoutSubviews() {
+        guard !shadowAdded else {return}
+        addShadowLayer()
+    }
+    
     // MARK: Show/dismiss
     
     func show(on vc: UIViewController, completion: (() -> Void)? = nil) {
-        DispatchQueue.main.async { 
-            self.configureBackground()
+        modalPresentationStyle = .overCurrentContext
+        modalTransitionStyle = .crossDissolve
+        DispatchQueue.main.async {
             vc.present(self, animated: true, completion: completion)
         }
     }
@@ -148,10 +145,45 @@ private extension GRNAlertViewController {
     
     // MARK: Config
     func configureView() {
-        addShadowLayer()
+        configureContent()
+        configureLayout()
+        configureBackground()
+        configureHandlers()
+        
     }
+    
+    private func configureContent() {
+        firstButton.title = content.firstButtonTitle ?? "OK"
+        secondButton.title = content.secondButtonTitle
+        titleLabel.text = content.title
+        subtitleLabel.text = content.subtitle
+        messageLabel.text = content.message
+        imageView.image = content.image
 
-    private func addShadowLayer() {
+        subtitleLabel.isHidden = content.subtitle == nil
+        messageLabel.isHidden = content.message == nil
+        imageView.isHidden = content.image == nil
+
+        if content.image == nil {
+            contentStackView.removeArrangedSubview(imageView)
+        }
+
+        secondButton.isHidden = secondButtonHandler == nil
+        buttonsSeparator.isHidden = secondButtonHandler == nil
+    }
+    
+    private func configureLayout() {
+        titleLabel.font = layout?.titleFont
+        subtitleLabel.font = layout?.subtitleFont
+        messageLabel.font = layout?.messageFont
+        firstButton.font = layout?.buttonsFont
+        secondButton.font = layout?.buttonsFont
+        alertView.layer.cornerRadius = layout?.cornerRadius ?? 8.0
+        backgroundType = layout?.backgroundType ?? .transparentDark
+        alertView.backgroundColor = layout?.backgroundColor
+    }
+    
+    func addShadowLayer() {
         shadowLayer = CAShapeLayer()
         shadowLayer.path = UIBezierPath(roundedRect: alertView.frame, cornerRadius: 0).cgPath
         shadowLayer.fillColor = UIColor.clear.cgColor
@@ -160,7 +192,10 @@ private extension GRNAlertViewController {
         shadowLayer.shadowOffset = CGSize(width: 0.0, height: 0.0)
         shadowLayer.shadowOpacity = 0.4
         shadowLayer.shadowRadius = alertView.layer.cornerRadius
-        alertView.layer.insertSublayer(shadowLayer, at: 0)
+        if let index = view.layer.sublayers?.index(of: alertView.layer) {
+            view.layer.insertSublayer(shadowLayer, at: UInt32(index))
+        }
+        shadowAdded = true
     }
     
     private func configureHandlers() {
@@ -180,20 +215,14 @@ private extension GRNAlertViewController {
     
     func configureBackground() {
         view.layoutIfNeeded()
-        
         switch backgroundType {
-        case .default:
+        case .clear:
             backgroundView.backgroundColor = .clear
         case .transparentDark:
             backgroundView.backgroundColor = UIColor.white.withAlphaComponent(0.2)
         case .transparentLight:
             backgroundView.backgroundColor = UIColor(white: 0, alpha: 0.4)
-        case .blurred:
-            configureBlurredBackground()
         }
-        
-        modalPresentationStyle = .overCurrentContext
-        modalTransitionStyle = .crossDissolve
     }
     
     private func configureBlurredBackground() {
@@ -217,6 +246,6 @@ private extension GRNAlertViewController {
 
 extension GRNAlertViewController {
     enum BackgroundType {
-        case `default`, transparentLight, transparentDark, blurred
+        case clear, transparentLight, transparentDark
     }
 }
