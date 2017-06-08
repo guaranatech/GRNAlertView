@@ -2,7 +2,7 @@
 
 This library has been created by [www.guarana.io](http://www.guarana.io)
 
-This very easy to use AlertView allows you to interact in a nice way with your users while preserving the aesthetics of the screen.
+This very easy to use alert view allows you to interact in a nice way with your users while preserving the aesthetics of the screen.
 
 ## Version
 
@@ -26,10 +26,7 @@ Drag the folder GRNAlertView into your project.
 
 ## How to use it
 
-Instantiate your GRNAlertViewController.
 Alert can be initialized in two ways.
-
-Initializers:
 
 ``` swift
 init(title: String, message: String? = nil)
