@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         layout.cornerRadius = CGFloat(cornerRadiusSlider.value)
         if customFontSwitch.isOn {
             let font = titleTextField.font!
-            layout.messageFont = font.withSize(17.0)
+            layout.titleFont = font.withSize(17.0)
             layout.subtitleFont = font.withSize(14.0)
             layout.messageFont = font.withSize(16.0)
             layout.buttonsFont = font.withSize(16.0)
