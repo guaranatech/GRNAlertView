@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "GRNAlertView"
-  s.version      = "1.0.0"
+  s.version      = "2.0"
   s.summary      = "This very easy to use AlertView allows you to interact in a nice way with your users while preserving the aesthetics of the screen."
 
   # This description is used to generate tags and improve search results.
@@ -65,7 +65,7 @@ This very easy to use AlertView allows you to interact in a nice way with your u
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -80,7 +80,7 @@ This very easy to use AlertView allows you to interact in a nice way with your u
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/guaranatech/GRNAlertView.git", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/guaranatech/GRNAlertView.git", :tag => "2.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +91,7 @@ This very easy to use AlertView allows you to interact in a nice way with your u
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "GRNAlertView", "GRNAlertView/**/*.{h,m}"
+  s.source_files  = "GRNAlertView", "GRNAlertView/**/*.{swift}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
