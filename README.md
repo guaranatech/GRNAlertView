@@ -76,20 +76,29 @@ struct GRNAlertContent {
 ```
 
 When you want to customize it, just create custom objects and set whatever you want.
-Layout and handlers parameters are optional in init method.
+Layout and handlers parameters are optional in init method with default nil values.
 ``` swift
 var content = GRNAlertContent()
 var layout = GRNAlertLayout()
 // ... configure content and layout objects as you want
 let alert = GRNAlertViewController(content: content, layout: layout)
-```
-OR
-``` swift
-let alert = GRNAlertViewController(content: content, layout: nil, firstButtonHandler: { alert in
-        // do whatever you want    
+
+// alert only with custom content
+let alert = GRNAlertViewController(content: content)
+
+// alert with custom content and handlers
+let alert = GRNAlertViewController(content: content, firstButtonHandler: { alert in
+        // first button handler, do whatever you want    
 }) { alert in
-        // do whatever you want   
+        // second button handler, do whatever you want   
 }
+```
+
+If you want to have two buttons, just set the title for the secondButtonTitle in the content object.
+
+``` swift
+var content = GRNAlertContent()
+content.secondButtonTitle = "Cancel"
 ```
 
 There are 3 possible background types:
@@ -108,3 +117,7 @@ enum BackgroundType {
 *   .transparentDark (background is black with an alpha)
 
 ![Dark](https://github.com/guaranatech/GRNAlertView/blob/master/screenshots/screenshot2.png)
+
+## Coming soon
+* Custom transitions
+* Blurred background
